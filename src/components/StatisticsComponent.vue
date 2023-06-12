@@ -1,23 +1,23 @@
 <template>
   <div class="q-pa-md">
     <div class="row justify-around">
-      <div class="col-5" style="min-height: 300px;">
-        <div class="text-center" style="height: 30%; background-color: rgb(156, 226, 44);">
+      <div class="col-5" style="min-height: 300px; max-height: 300px;">
+        <div v-if="statistics.aMenor40 > 0" class="text-center" :style="`height: ${(statistics.aMenor40 * 100).toFixed(2)}%; background-color: rgb(156, 226, 44);`">
           <div>{{ `A < 40kg` }}</div>
           <div class="text-bold">{{ `${(statistics.aMenor40 * 100).toFixed(2)}%` }}</div>
         </div>
 
-        <div class="text-center" style="height: 30%; background-color: red;">
+        <div v-if="statistics.aEntre40y50 > 0" class="text-center" :style="`height: ${(statistics.aEntre40y50 * 100).toFixed(2)}%; background-color: red;`">
           <div>{{ `40kg < A < 50kg` }}</div>
           <div class="text-bold">{{ `${(statistics.aEntre40y50 * 100).toFixed(2)}%` }}</div>
         </div>
 
-        <div class="text-center" style="height: 20%; background-color: blue;">
+        <div v-if="statistics.aEntre50y60 > 0" class="text-center" :style="`height: ${(statistics.aEntre50y60 * 100).toFixed(2)}%; background-color: blue;`">
           <div>{{ `50kg < A < 60kg` }}</div>
           <div class="text-bold">{{ `${(statistics.aEntre50y60 * 100).toFixed(2)}%` }}</div>
         </div>
 
-        <div class="text-center" style="height: 20%; background-color: green;">
+        <div v-if="statistics.aMayor60 > 0" class="text-center" :style="`height: ${(statistics.aMayor60 * 100).toFixed(2)}%; background-color: green;`">
           <div>{{ `60kg <= A` }}</div>
           <div class="text-bold">{{ `${(statistics.aMayor60 * 100).toFixed(2)}%` }}</div>
         </div>
