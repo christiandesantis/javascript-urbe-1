@@ -31,7 +31,7 @@
 
           <q-tab-panel name="cards">
             <div class="text-h6 q-mb-lg">Tarjetas</div>
-            <!-- <StatisticsCharts /> -->
+            <CardsComponent />
           </q-tab-panel>
         </q-tab-panels>
       </q-card>
@@ -44,6 +44,7 @@
 import { ref } from 'vue'
 import StatisticsComponent from 'src/components/StatisticsComponent.vue'
 import InterestComponent from './InterestComponent.vue'
+import CardsComponent from './CardsComponent.vue'
 
 const tab = ref('statistics')
 
