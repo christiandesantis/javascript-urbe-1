@@ -1,7 +1,11 @@
 <template>
   <div class="q-pa-md">
     <div class="row justify-around">
-      <div class="col-5" style="min-height: 300px; max-height: 300px;">
+      <div
+        v-if="statistics.aMenor40 > 0 || statistics.aEntre40y50 > 0 || statistics.aEntre50y60 > 0 || statistics.aMayor60 > 0"
+        class="col-5"
+        style="min-height: 300px; max-height: 300px;"
+        >
         <div v-if="statistics.aMenor40 > 0" class="text-center" :style="`height: ${(statistics.aMenor40 * 100).toFixed(2)}%; background-color: rgb(156, 226, 44);`">
           <div>{{ `A < 40kg` }}</div>
           <div class="text-bold">{{ `${(statistics.aMenor40 * 100).toFixed(2)}%` }}</div>
